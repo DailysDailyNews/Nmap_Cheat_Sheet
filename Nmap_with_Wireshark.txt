@@ -1,0 +1,30 @@
+//Nmap and Wireshark by { Daily Investors }
+// In this test, we will run nmap scans side by side with Wireshark focusing on the "Flags"
+
+1. First to pick the correct Wireshark setting.
+2. We wil use eth0. eth0 is basically a landline/home network.
+3. Ensure you pick the correct interface.
+4. In this test scan, we will use "Nmaps" three-way handshake.
+   sudo nmap -sT 555.555.5.555 -p22
+5. To begin testing with "Wireshark". We have to set a filter for "Port 22"  
+   tcp.port == 22
+   //You can wittness the handshake through "Wireshark".
+   Remember Knowing how to filter, is the most important!
+6. Basically the attacker sends a "SYN" packet, then we get one back from that host.
+   A series of transfers are taking place.
+7. Now to run a "nmap" scan from the data on "Wireshark".
+   sudo nmap 555.555.5.555 -p22 //Basic Scan
+   Should by default run "SYN" stealth scan.
+8. Now to terminate the attacker. We can send a reset flag or request.
+   This can take place before the "Handshake" finishes.
+
+
+//Notes
+1.TCP connection scans are less efficient.
+2. Full TCP scans, are more likly to log the connection!
+3. Knowing and Understanding these flags, are a crucial part to Testing.
+4. Remember when Testing, you could be going up against a "Blue Team".
+5. With Technology today, if you dont protect yourself, you might get attacked back.
+   I have frfr, and authorized. However, Wireshark can be evaded and spoofed.
+   
+7. Change Nmap Description of User-Agent. Do not give Yourself away.
